@@ -1,0 +1,24 @@
+{
+  "name": "typescriptproject",
+  "version": "1.0.0",
+  "description": "Note 1 cours Angular",
+  "main": "index.js",
+  "scripts": {
+    "build" : "tsc",
+    "start": "node Main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaFonsecaDamien/TypescriptProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaFonsecaDamien/TypescriptProject/issues"
+  },
+  "homepage": "https://github.com/DaFonsecaDamien/TypescriptProject#readme",
+  "dependencies": {
+    "typescript": "^4.2.3"
+  }
+}
