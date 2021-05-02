@@ -1,4 +1,4 @@
-import {Pokemon} from "./Pokemon";
+import {Pokemon} from "./pokemon";
 
 export interface IAttack{
     name: string;
@@ -20,7 +20,11 @@ export class Attack implements IAttack{
         this.maxPowerPoints = props.maxPowerPoints;
     }
 
-    attack(pokemon: Pokemon){
-        
+    //TO-DO Better calcul about the damage of the spell and pokemon
+    //TO-DO Better manage of the power points
+    public attack(attacker: Pokemon, defender:Pokemon){
+        let damage = this.damage + attacker.attack;
+        defender.loseHp(damage);
+        this.powerPoints--;
     }
 }

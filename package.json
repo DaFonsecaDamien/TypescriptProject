@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node Main.js",
-    "test": "jest"
+    "start": "node build/main.js",
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",

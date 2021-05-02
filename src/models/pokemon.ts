@@ -1,4 +1,4 @@
-import {Attack} from "./Attack";
+import {Attack} from "./attack";
 
 export enum PokemonTypes {
     NORMAL = "NORMAL",
@@ -30,7 +30,6 @@ export interface IPokemon{
     speed: number;
     accuracy: number;
     spells: Attack[];
-    items: string[];
 }
 
 export class Pokemon implements IPokemon{
@@ -42,29 +41,34 @@ export class Pokemon implements IPokemon{
     speed: number;
     accuracy: number;
     spells: Attack[];
-    items: string[];
 
     constructor(props: IPokemon) {
         this.name = props.name;
         this.type = props.type;
-        this.health = props.health;
+        this.health= props.health;
+        this.attack= props.attack;
+        this.speed= props.speed;
         this.defense = props.defense;
-        this.attack = props.attack;
-        this.speed = props.speed;
         this.accuracy = props.accuracy;
-        this.items = props.items;
         this.spells = props.spells;
+    }
+
+    public loseHp(damage: number){
+        this.health -= damage;
+    }
+
+    public isAlive(): boolean{
+        return this.health > 0;
     }
 }
 
 export function isAttackingFirst(first:Pokemon, second:Pokemon): Pokemon{
-    if(first.speed == second.speed && first.accuracy == second.accuracy){
-        return first;
-    }else if(first.speed > second.speed){
+    if (first.speed === second.speed) {
+        return (Math.round(Math.random()) === 0 ? first:second);
+    }
+    else if(first.speed > second.speed){
         return first;
     }else{
         return second;
     }
 }
-
-
