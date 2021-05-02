@@ -64,6 +64,10 @@ describe('Test Class Battle', () => {
             pokemons : [charmander,ivysaur]
         });
     });
+    it('should return if the pokemon is alive', () => {
+        battle.startBattle().then(pokemon => expect(pokemon.isAlive()).toBe(true));
+    });
+
     it('should return the winner of a full fight', () => {
         battle.startBattle().then(pokemon => expect(pokemon).toBe(charmander));
     });
